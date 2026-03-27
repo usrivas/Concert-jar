@@ -1,0 +1,98 @@
+/* Filters wrapper */
+.filters-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Search bar */
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: rgba(147, 164, 196, 0.6);
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 13px 20px 13px 46px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+    color: #e2e8f0;
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    outline: none;
+    backdrop-filter: blur(8px);
+    box-sizing: border-box;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.search-input::placeholder {
+    color: rgba(147, 164, 196, 0.45);
+}
+
+.search-input:focus {
+    border-color: rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15), 0 0 20px rgba(139, 92, 246, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Year pills row */
+.year-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(147, 164, 196, 0.7);
+    font-size: 13px;
+    letter-spacing: 0.03em;
+}
+
+.year-pill {
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(200, 210, 230, 0.85);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.year-pill:hover {
+    background: rgba(139, 92, 246, 0.15);
+    border-color: rgba(139, 92, 246, 0.4);
+    color: #c4b5fd;
+}
+
+.year-pill.active {
+    background: #7c3aed;
+    border-color: #7c3aed;
+    color: #fff;
+    box-shadow: 0 0 14px rgba(124, 58, 237, 0.5);
+}
+
+.year-pill:focus-visible {
+    outline: 2px solid #7c3aed;
+    outline-offset: 2px;
+}

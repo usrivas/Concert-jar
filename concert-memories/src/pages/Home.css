@@ -1,0 +1,112 @@
+/* ── Home page ── */
+.home {
+    min-height: 100vh;
+    min-height: 100svh;
+    background: radial-gradient(ellipse 80% 60% at 50% -10%, #1a0a3d 0%, #0d0618 45%, #050309 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px 80px;
+    box-sizing: border-box;
+}
+
+/* ── Starfield ── */
+.starfield {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0;
+    animation: star-twinkle 4s ease-in-out infinite;
+}
+
+@keyframes star-twinkle {
+    0%, 100% { opacity: 0; }
+    50%       { opacity: 0.7; }
+}
+
+/* ── Hero ── */
+.home-hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 64px 0 32px;
+}
+
+.home-title {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: #f0eaff;
+    margin: 0 0 12px;
+    text-shadow: 0 0 60px rgba(167, 139, 250, 0.4);
+}
+
+.home-subtitle {
+    font-size: clamp(14px, 2vw, 17px);
+    color: rgba(180, 160, 230, 0.75);
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+/* ── Filters ── */
+.home-filters {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 48px;
+}
+
+/* ── Jar grid ── */
+.home-grid-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.jar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    justify-items: center;
+}
+
+@media (max-width: 900px) {
+    .jar-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .jar-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* ── Empty state ── */
+.no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 80px 0;
+    color: rgba(147, 164, 196, 0.6);
+    font-size: 15px;
+}
+
+.no-results-icon {
+    font-size: 56px;
+    filter: grayscale(0.4);
+}
